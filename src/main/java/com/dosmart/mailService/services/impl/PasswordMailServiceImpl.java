@@ -15,7 +15,7 @@ public class PasswordMailServiceImpl implements PasswordMailService {
     private JavaMailSender javaMailSender;
 
     @Override
-    public String sendEmail(EmailDetails emailDetails) {
+        public String sendEmail(EmailDetails emailDetails) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setFrom("dosmartstusece@gmail.com");
         mailMessage.setTo(emailDetails.getRecipient());
