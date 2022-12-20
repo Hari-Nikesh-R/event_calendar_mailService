@@ -1,6 +1,5 @@
 package com.dosmart.mailService.services.impl;
 
-import ch.qos.logback.core.encoder.EchoEncoder;
 import com.dosmart.mailService.dtos.EmailDetails;
 import com.dosmart.mailService.services.PasswordMailService;
 import org.springframework.beans.factory.annotation.Autowired;
