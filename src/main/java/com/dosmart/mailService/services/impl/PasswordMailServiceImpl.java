@@ -27,6 +27,7 @@ public class PasswordMailServiceImpl implements PasswordMailService {
         }
         catch (Exception exception)
         {
+            System.out.println(exception.getMessage());
             return exception.getMessage();
         }
     }
