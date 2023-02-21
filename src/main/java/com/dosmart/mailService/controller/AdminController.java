@@ -2,11 +2,14 @@ package com.dosmart.mailService.controller;
 
 import com.dosmart.mailService.dtos.BaseResponse;
 import com.dosmart.mailService.services.AdminService;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @CrossOrigin("*")
@@ -39,5 +42,15 @@ public class AdminController {
        {
            return new BaseResponse<>(exception.toString(),HttpStatus.INTERNAL_SERVER_ERROR.value(), false,exception.getMessage(),null);
        }
+    }
+    @GetMapping(value = "/fetch/forgot-password/code")
+    public BaseResponse<Map<String,String>> getGeneratedCodeMap(){
+        try{
+            return adminService.getCode();
+        }
+        catch (Exception exception){
+            return new BaseResponse<>(exception.toString(),HttpStatus.INTERNAL_SERVER_ERROR.value(), false,exception.getMessage(),null);
+
+        }
     }
 }
